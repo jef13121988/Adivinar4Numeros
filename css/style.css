@@ -1,0 +1,329 @@
+/* Reseteo de padding y margin */
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+/* Colores y estructura del Body */
+body {
+    font-family: "Open Sans", "Segoe UI", sans-serif;
+    background-color: black;
+    padding: 1rem;
+}
+
+/* Colores y estructura del header y el navbar */
+header {
+    padding: 1rem 2rem;
+    z-index: 10;
+    background-color: black;
+}
+
+header div nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0.5rem 0rem;
+}
+
+header div nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: darkslategray;
+    padding: 0.5rem 0.5rem;
+    transition: all 1s;
+}
+
+header div nav ul li a:hover {
+    background-color: hsla(195, 83%, 58%, 0.2);
+    border-radius: 5rem;
+}
+
+/* Se achica el tamaño de la fuente del navbar por debajo de los 1000px */
+@media (max-width: 1000px) {
+    header div nav ul li a {
+        font-size: 1rem;
+    }
+}
+
+/* Se achica el tamaño de la fuente del navbar por debajo de los 800px */
+@media (max-width: 800px) {
+    header div nav ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Configuración para la página activa */
+[aria-current=page] {
+    border-radius: 5rem;
+    border: solid 3px darkslategray;
+}
+  
+/* Hover de la página activa */
+[aria-current=page]:hover {
+    background-color: rgb(31, 51, 51);
+}
+
+/* Decoración de h1 */
+h1 {
+    border: 3px solid darkslategray;
+    padding: 10px;
+    color: darkslategray;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Decoración de h2 de incidencias */
+.incidenciasTitulo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-image: radial-gradient(ellipse 100% 100%, black, #28282B);
+    border-radius: 100px;
+}
+
+/* Decoración de vida */
+.vidaTitulo {
+    color: darkred;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-image: radial-gradient(ellipse 100% 100%, darkslategray, black);
+    border-radius: 100px;
+}
+
+/* Decoración de párrafos */
+.fondoTexto {
+    border: 10px solid rgb(24, 48, 48);
+    color: white;
+    background-color: darkslategray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/* Estilo de caja presentando stats de partidas anteriores */
+#statsAnteriores {
+    width: 300px;
+}
+
+/* Ajusto ancho de stats anteriores */
+@media (max-width: 300px) {
+    #statsAnteriores {
+        width: 100%;
+    }
+}
+
+/* Decoración párrafos de vida */
+.vida {
+    color: darkred;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+/* Decoración párrafos de eventos */
+.eventos {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: #28282B;
+    border-radius: 15px;
+}
+
+/* Configuración caja con descripción de personajes */
+.descripcionPersonaje {
+    width: 100%;
+}
+
+/* Decoración de botones */
+button {
+    background-color: darkslategray;
+    color: white;
+    border: 3px solid rgb(24, 48, 48);
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 300px;
+    transition: 1s;
+}
+
+button:hover {
+    background-color: rgb(24, 48, 48);
+    border: 3px solid white;
+}
+
+/* Estilo de botón inicio y de seleccionar nombre */
+.botonInicio {
+    width: 300px;
+}
+
+/* Decorado del botón con las instrucciones */
+#ayuda {
+    color: #bbb;
+    background-color: rgb(24, 48, 48);
+    border: 3px solid #bbb;
+
+}
+
+#ayuda:hover {
+    color: white;
+    background-color: black;
+    border: 3px solid darkslategray;
+}
+
+/* Estilo de input */
+input[type=text] {
+    width: 300px;
+    padding: 10px;
+    border: 3px solid darkslategray;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    transition: all 1s;
+  }
+  
+/* Contorno y relleno del input cuando se lo selecciona */
+input[type=text]:focus {
+    outline: 2px solid hsla(195, 83%, 58%, 0.2);
+    background-color: rgb(40, 60, 70);
+    color: white;
+}
+  
+/* Responsive para pantallas menores a 396px */
+@media (max-width: 396px) {
+    input[type=text], .botonInicio {
+        width: 100%;
+    }
+}
+
+/* Configuración de imagen de portada */
+.portada {
+    width: 550px;
+    margin: 25px;
+    border-radius: 100px;
+}
+
+/* Configuración de imagen de personaje */
+.imgPersonaje {
+    width: 90%;
+    margin: 25px;
+    border-radius: 100px;
+}
+
+/* Efecto para las fotos */
+.imgPersonaje:hover {
+    opacity: 90%;
+}
+
+/* Borde para las fotos que tienen el máximo del array en alguna habilidad */
+.maximo {
+    filter: drop-shadow(0 0 1rem orange);
+}
+
+/* Borde para la caja en la selección 1 */
+.cajaSeleccion1 {
+    border: 3px solid blue;
+}
+
+/* Borde para la caja en la selección 2 */
+.cajaSeleccion2 {
+    border: 3px solid red;
+}
+
+/* Borde para la foto en la selección 1 */
+.seleccionado1 {
+    border: 2px solid blue;
+}
+
+/* Borde para la foto en la selección 2 */
+.seleccionado2 {
+    outline: 2px solid red;
+}
+
+/* Se achica el tamaño de la imagen por debajo de los 600px */
+@media (max-width: 600px) {
+    .portada {
+        width: 85%;
+    }
+}
+
+/* Efecto para las fotos */
+.portada:hover {
+  opacity: 90%;
+}
+
+/* Imagen para el switch de selección de personaje */
+.switch {
+    width: 64px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Número para identificar personaje en selección */
+.imagenSeleccion{
+    display: inline-block;
+    position: relative;
+}
+
+.numeroSeleccion{
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    top: 5%;
+    right: 5%;
+    transform: translate(-5%, -5%); 
+    background-color: darkslategray;
+    padding: 2px 7px;
+    border-radius: 100px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    justify-content: end;
+}
+
+/* Ajusto el margen del texto del footer */
+footer p {
+    border: 3px solid darkslategray;
+    padding: 10px;
+    color: darkslategray;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Configuración de los tí­tulos h3 de las cards */
+.titulo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 1rem;
+    background-color: darkslategray;
+    border-radius: 30px;
+    padding: 0.5rem;
+}
+
+/* Se ajusta el tamaÃ±o de la fuente para pantallas menores a 440px */
+@media (max-width: 440px) {
+.titulo {
+    font-size: 1.15rem;
+}
+}
+  
+/* Para que los nombres sean responsive */
+.tituloResponsive {
+flex-grow: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
