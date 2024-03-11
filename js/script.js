@@ -5,12 +5,16 @@ class ElJuego {
 
     constructor(){
 
+        this.referencia; // Para los Event Listeners
         this.arregloNumeros = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]; // Arreglo conteniendo los valores que puede adoptar el sorteo
         this.numeroParaAdivinar = this.crearNumero(); // Corresponde a la variable que va a contener el número a deducir/adivinar
         this.intentoActual; // Varialbe que contiene el intento actual a analizar
         this.cantidadDeIntentos = 0; // Contador con el número de intentos
         this.intentos = []; // Arreglo que incorpora a los intentos
         this.resultadosIntentos = []; // Arreglo que incluye los resultados correspondientes a cada intento
+        this.seccion = document.querySelector('#caja'); // Selecciono el contenedor que se va a modificar
+        this.btnSubmitir; // Para el botón utilizado para submitir el intento
+        this.cajaMensajes; // La caja donde aparecen los mensajes
 
         // Función para iniciar el juego
         this.iniciarJuego();
@@ -21,7 +25,21 @@ class ElJuego {
     
     // Función para dar inicio al juego
     iniciarJuego(){
-        // Da inicio a las mecánicas del juego
+
+        // Selecciono el botón
+        const btnInicio = document.querySelector('#iniciarJuego');
+
+        // Creo el Event Listener que levante si el jugador inicia el juego
+        btnInicio.addEventListener('click', this.referencia = () => {
+
+            // Remuevo el Event Listener
+            btnInicio.removeEventListener('click', this.referencia);
+
+            // Inicio la fórmula para colocar el layout del juego
+            this.pantallaJuego();
+
+        });
+
     }
 
     // Función que realiza el sorteo entre los elementos del array ingresado
@@ -70,6 +88,24 @@ class ElJuego {
     controlLargo( variable ){
 
         return variable.length === 4; // Controlo si el largo del valor ingresado es cuatro
+
+    }
+
+    // Coloco el layout del juego
+    pantallaJuego(){
+
+        // Genero el código HTML
+        this.seccion.innerHTML = // html
+            `<div>
+                <input type="text" id="submitir" placeholder="Ingrese un número de 4 dígitos">
+            </div>
+            <div>
+                <p id="cajaMensajes" class="eventos">
+                </p>
+            </div>
+            <div class="row justify-content-center">
+                <button id="reiniciarJuego" class="botonInicio"> Jugar de nuevo </button>
+            </div>`;
 
     }
 
