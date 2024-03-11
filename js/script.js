@@ -8,7 +8,9 @@ class ElJuego {
         this.referencia; // Para los Event Listeners
         this.arregloNumeros = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]; // Arreglo conteniendo los valores que puede adoptar el sorteo
         this.numeroParaAdivinar = this.crearNumero(); // Corresponde a la variable que va a contener el número a deducir/adivinar
-        this.intentoActual; // Varialbe que contiene el intento actual a analizar
+        this.intentoActual; // Variable que contiene el intento actual a analizar
+        this.maximoIntentos = 0; // Variable a la que se asigna el número máximo de intentos
+        this.maximoTiempo = 0; // Variable a la que se le asigna el tiempo máximo para adivinar el número
         this.cantidadDeIntentos = 0; // Contador con el número de intentos
         this.intentos = []; // Arreglo que incorpora a los intentos
         this.resultadosIntentos = []; // Arreglo que incluye los resultados correspondientes a cada intento
