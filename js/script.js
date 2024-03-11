@@ -98,13 +98,11 @@ class ElJuego {
         this.seccion.innerHTML = // html
             `<div>
                 <input type="text" id="submitir" placeholder="Ingrese un número de 4 dígitos">
+                <button id="btnSubmitir" class="btnSubmitir"> Enviar </button>
             </div>
-            <div>
-                <p id="cajaMensajes" class="eventos">
+            <div class="d-flex justify-content-center">
+                <p id="cajaMensajes" class="eventos"> Acá van a aparecer las respuestas una vez que se haya submitido una.
                 </p>
-            </div>
-            <div class="row justify-content-center">
-                <button id="reiniciarJuego" class="botonInicio"> Jugar de nuevo </button>
             </div>`;
 
     }

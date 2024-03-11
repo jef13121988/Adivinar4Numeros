@@ -135,6 +135,14 @@ h1 {
     padding: 1rem;
     background-color: #28282B;
     border-radius: 15px;
+    width: 500px;
+}
+
+/* Responsive para pantallas menores a 600px */
+@media (max-width: 600px) {
+    input[type=text], .eventos {
+        width: 100%;
+    }
 }
 
 /* Configuración caja con descripción de personajes */
@@ -164,6 +172,11 @@ button:hover {
     width: 300px;
 }
 
+/* Estilo de botón para submitir intento */
+.btnSubmitir {
+    width: 75px;
+}
+
 /* Decorado del botón con las instrucciones */
 #ayuda {
     color: #bbb;
@@ -180,7 +193,7 @@ button:hover {
 
 /* Estilo de input */
 input[type=text] {
-    width: 300px;
+    width: 250px;
     padding: 10px;
     border: 3px solid darkslategray;
     border-radius: 10px;
