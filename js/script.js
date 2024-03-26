@@ -15,6 +15,7 @@ class ElJuego {
         this.intentos = []; // Arreglo que incorpora a los intentos
         this.resultadosIntentos = []; // Arreglo que incluye los resultados correspondientes a cada intento
         this.seccion = document.querySelector('#caja'); // Selecciono el contenedor que se va a modificar
+        this.inputNumero; // Para el input de los 4 dígitos
         this.btnSubmitir; // Para el botón utilizado para submitir el intento
         this.cajaMensajes; // La caja donde aparecen los mensajes
 
@@ -80,7 +81,7 @@ class ElJuego {
     // Controla si el valor ingresado es un número
     controlNumero( variable ){
 
-        const numero = parseInt( variable ); // Convierto el valor ingresado en número
+        const numero = Number( variable ); // Convierto el valor ingresado en número
 
         return !isNaN( numero ); // Controlo si el resultado es un número
 
@@ -89,7 +90,15 @@ class ElJuego {
     // Controla si el valor ingresado tiene cuatro caracteres
     controlLargo( variable ){
 
-        return variable.length === 4; // Controlo si el largo del valor ingresado es cuatro
+        const numero = Number( variable ); // Convierto el valor ingresado en número
+
+        if (!isNaN( numero )){
+            return numero.length === 4; // Controlo si el largo del valor ingresado es cuatro (y un número)
+        } else {
+            return variable.length === 4; // Controlo si el largo del valor ingresado es cuatro
+        }
+
+        
 
     }
 
@@ -107,6 +116,50 @@ class ElJuego {
                 </p>
             </div>`;
 
+        // Asigno una variable a cada contenedor
+        this.inputNumero = document.querySelector('#submitir');
+        this.btnSubmitir = document.querySelector('#btnSubmitir');
+        this.cajaMensajes = document.querySelector('#cajaMensajes');
+
+        // Creo el Event Listener que levante si el jugador submitió un número
+        this.btnSubmitir.addEventListener('click', this.referencia = () => {
+
+            // Inicio la fórmula que levanta el input
+            this.levantarSubmitir();
+
+        });
+
+    }
+
+    // Fórmula que levanta el input submitido
+    levantarSubmitir(){
+        
+        // Levanto el valor del input
+        this.intentoActual = this.inputNumero.value;
+
+        this.controlInput( this.intentoActual );
+        
+    }
+
+    // Fórmula que controla que el input sea un número de 4 dígitos
+    controlInput( variable ){
+        if ( this.controlNumero( variable ) ){
+            console.log("OK");
+        } else {
+            console.log("No es un número");
+        }
+        if ( this.controlLargo( variable ) ){
+            console.log("OK");
+        } else {
+            console.log("No tiene 4 dígitos");
+        }
+        
+    }
+
+    // Doy la opción de reiniciar el juego
+    juegoFinalizado(){
+        // Remuevo el Event Listener
+        this.btnSubmitir.removeEventListener('click', this.referencia);
     }
 
 }
