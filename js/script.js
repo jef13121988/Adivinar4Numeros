@@ -90,15 +90,7 @@ class ElJuego {
     // Controla si el valor ingresado tiene cuatro caracteres
     controlLargo( variable ){
 
-        const numero = Number( variable ); // Convierto el valor ingresado en número
-
-        if (!isNaN( numero )){
-            return numero.length === 4; // Controlo si el largo del valor ingresado es cuatro (y un número)
-        } else {
-            return variable.length === 4; // Controlo si el largo del valor ingresado es cuatro
-        }
-
-        
+        return variable.length === 4;    
 
     }
 
